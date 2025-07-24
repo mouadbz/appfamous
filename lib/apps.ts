@@ -11,6 +11,7 @@ export interface AppShowcase {
   title: string
   name?: string
   date?: string
+  lastModified?: string
   description?: string
   tagline?: string
   icon: string
@@ -47,13 +48,23 @@ export function getAllApps(): AppShowcase[] {
       const fullPath = path.join(appsDirectory, fileName)
       const { data, content } = matter(fs.readFileSync(fullPath, "utf8"))
       const html = markdownToHtml(content)
+      
+      // Get file stats for automatic date handling
+      const stats = fs.statSync(fullPath)
+      const createdDate = stats.birthtime
+      const modifiedDate = stats.mtime
+      
+      // Use frontmatter date or fallback to file creation date
+      const publishDate = data.date || createdDate.toISOString().split('T')[0]
+      const lastModified = modifiedDate.toISOString().split('T')[0]
 
       return {
         slug,
         content,
         html,
         title: data.title,
-        date: data.date,
+        date: publishDate,
+        lastModified: lastModified,
         description: data.description,
         icon: data.icon,
         tags: data.tags || [],
@@ -76,13 +87,23 @@ export function getAppBySlug(slug: string): AppShowcase | null {
 
   const { data, content } = matter(fs.readFileSync(mdPath, "utf8"))
   const html = markdownToHtml(content)
+  
+  // Get file stats for automatic date handling
+  const stats = fs.statSync(mdPath)
+  const createdDate = stats.birthtime
+  const modifiedDate = stats.mtime
+  
+  // Use frontmatter date or fallback to file creation date
+  const publishDate = data.date || createdDate.toISOString().split('T')[0]
+  const lastModified = modifiedDate.toISOString().split('T')[0]
 
   return {
     slug,
     content,
     html,
     title: data.title,
-    date: data.date,
+    date: publishDate,
+    lastModified: lastModified,
     description: data.description,
     icon: data.icon,
     tags: data.tags || [],

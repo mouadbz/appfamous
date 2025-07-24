@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Globe } from "lucide-react"
 import type { Metadata } from "next"
 import { siteConfig, getCanonicalUrl } from "@/lib/config"
+import { formatDateForDisplay, formatDateForSEO } from "@/lib/utils"
 
 export async function generateStaticParams() {
   const apps = getAllApps()
@@ -86,8 +87,8 @@ export default function AppShowcasePage({ params }: { params: { slug: string } }
     headline: app.title,
     description: app.description,
     image: app.icon || `${siteConfig.url}/og-app-default.png`,
-    datePublished: app.date,
-    dateModified: app.date,
+    datePublished: app.date ? formatDateForSEO(app.date) : undefined,
+    dateModified: app.lastModified ? formatDateForSEO(app.lastModified) : (app.date ? formatDateForSEO(app.date) : undefined),
     author: {
       "@type": "Organization",
       name: siteConfig.creator,
@@ -139,12 +140,7 @@ export default function AppShowcasePage({ params }: { params: { slug: string } }
             <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
               {app.date && (
                 <time dateTime={app.date}>
-                  Published on{" "}
-                  {new Date(app.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  Published on {formatDateForDisplay(app.date)}
                 </time>
               )}
               <span>•</span>

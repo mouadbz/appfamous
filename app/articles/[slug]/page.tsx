@@ -6,6 +6,7 @@ import Image from "next/image"
 import type { Metadata } from "next"
 import { siteConfig, getCanonicalUrl } from "@/lib/config"
 import { getAppBySlug } from "@/lib/apps"
+import { formatDateForDisplay, formatDateForSEO } from "@/lib/utils"
 
 export async function generateStaticParams() {
   const articles = getAllArticles()
@@ -48,6 +49,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: "article",
       authors: [siteConfig.creator],
       tags: article.tags,
+      publishedTime: article.date,
+      modifiedTime: article.lastModified || article.date,
     },
     twitter: {
       card: "summary_large_image",
@@ -87,8 +90,8 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     headline: article.title,
     description: article.description,
     image: article.image || `${siteConfig.url}/og-article-default.png`,
-    datePublished: article.date,
-    dateModified: article.date,
+    datePublished: article.date ? formatDateForSEO(article.date) : undefined,
+    dateModified: article.lastModified ? formatDateForSEO(article.lastModified) : (article.date ? formatDateForSEO(article.date) : undefined),
     author: {
       "@type": "Organization",
       name: siteConfig.creator,
@@ -146,12 +149,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
               {article.date && (
                 <time dateTime={article.date}>
-                  Published on{" "}
-                  {new Date(article.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  Published on {formatDateForDisplay(article.date)}
                 </time>
               )}
               <span>•</span>

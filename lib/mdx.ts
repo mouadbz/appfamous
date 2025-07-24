@@ -11,6 +11,7 @@ export interface Article {
   slug: string
   title: string
   date?: string
+  lastModified?: string
   description?: string
   image?: string
   tags?: string[]
@@ -42,13 +43,23 @@ export function getAllArticles(): Article[] {
       const fullPath = path.join(articlesDirectory, fileName)
       const { data, content } = matter(fs.readFileSync(fullPath, "utf8"))
       const html = markdownToHtml(content)
+      
+      // Get file stats for automatic date handling
+      const stats = fs.statSync(fullPath)
+      const createdDate = stats.birthtime
+      const modifiedDate = stats.mtime
+      
+      // Use frontmatter date or fallback to file creation date
+      const publishDate = data.date || createdDate.toISOString().split('T')[0]
+      const lastModified = modifiedDate.toISOString().split('T')[0]
 
       return {
         slug,
         content,
         html,
         title: data.title,
-        date: data.date,
+        date: publishDate,
+        lastModified: lastModified,
         description: data.description,
         image: data.image,
         tags: data.tags || [],
@@ -73,13 +84,23 @@ export function getArticleBySlug(slug: string): Article | null {
 
   const { data, content } = matter(fs.readFileSync(mdPath, "utf8"))
   const html = markdownToHtml(content)
+  
+  // Get file stats for automatic date handling
+  const stats = fs.statSync(mdPath)
+  const createdDate = stats.birthtime
+  const modifiedDate = stats.mtime
+  
+  // Use frontmatter date or fallback to file creation date
+  const publishDate = data.date || createdDate.toISOString().split('T')[0]
+  const lastModified = modifiedDate.toISOString().split('T')[0]
 
   return {
     slug,
     content,
     html,
     title: data.title,
-    date: data.date,
+    date: publishDate,
+    lastModified: lastModified,
     description: data.description,
     image: data.image,
     tags: data.tags || [],
