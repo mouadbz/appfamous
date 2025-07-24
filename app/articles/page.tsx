@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 import { siteConfig, getCanonicalUrl } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "Articles - iOS App Design Tutorials & Guides | refocus",
+  title: "Articles - iOS App Design Tutorials & Guides | appfamous",
   description:
     "Browse all articles about iOS app design and development. Learn from comprehensive tutorials, design patterns, and best practices for creating stunning iOS applications.",
   keywords: ["iOS tutorials", "app design articles", "mobile UI guides", "iOS development tips"],

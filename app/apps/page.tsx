@@ -6,7 +6,7 @@ import type { Metadata } from "next"
 import { siteConfig, getCanonicalUrl } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "iOS App Showcases - Design Case Studies | refocus",
+  title: "iOS App Showcases - Design Case Studies | appfamous",
   description:
     "Explore our collection of iOS app design showcases and case studies. Learn from real-world examples of beautiful, functional mobile applications.",
   keywords: ["iOS app showcase", "app design case studies", "mobile app examples", "iOS UI design"],

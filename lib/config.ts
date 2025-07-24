@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: "refocus",
+  name: "appfamous",
   description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://appfamous.com",
   ogImage: "/og-image.png",
   links: {
-    twitter: "https://twitter.com/refocus",
-    github: "https://github.com/refocus",
+    twitter: "https://twitter.com/appfamous",
+    github: "https://github.com/appfamous",
   },
-  creator: "refocus Team",
+  creator: "appfamous Team",
 }
 
 export const getCanonicalUrl = (path: string) => {

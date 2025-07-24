@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: article.title,
       description: article.description || `Learn about ${article.title}`,
       images: [ogImage],
-      creator: "@refocus",
+      creator: "@appfamous",
     },
     robots: {
       index: true,

@@ -6,9 +6,9 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 py-2 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="bg-black text-white py-2 px-6 rounded-full flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">
-            refocus
-          </Link>
+                  <Link href="/" className="text-2xl font-bold">
+          appfamous
+        </Link>
           <div className="flex items-center gap-6">
             <Link href="/articles" className="text-lg hover:text-gray-300 transition-colors">
               Articles

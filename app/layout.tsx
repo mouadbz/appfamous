@@ -10,15 +10,15 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://appfamous.com"),
   title: {
-    default: "refocus - Master iOS App Design",
-    template: "%s | refocus",
+    default: "appfamous - Master iOS App Design",
+    template: "%s | appfamous",
   },
   description:
     "Master iOS app design with comprehensive guides, tutorials, and design resources. Stay updated with the latest trends and best practices.",
   keywords: ["iOS app design", "mobile UI/UX", "iOS development", "app design tutorials", "iOS design patterns"],
-  authors: [{ name: "refocus Team" }],
-  creator: "refocus",
-  publisher: "refocus",
+  authors: [{ name: "appfamous Team" }],
+  creator: "appfamous",
+  publisher: "appfamous",
   formatDetection: {
     email: false,
     address: false,
@@ -41,29 +41,29 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    title: "refocus - Master iOS App Design",
-    description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
-    images: [
-      {
-        url: `${siteConfig.url}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "refocus - iOS App Design Blog",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "refocus - Master iOS App Design",
-    description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
-    images: ["/og-image.png"],
-    creator: "@refocus",
-  },
+                  openGraph: {
+                  type: "website",
+                  locale: "en_US",
+                  url: siteConfig.url,
+                  siteName: siteConfig.name,
+                  title: "appfamous - Master iOS App Design",
+                  description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
+                  images: [
+                    {
+                      url: `${siteConfig.url}/og-image.png`,
+                      width: 1200,
+                      height: 630,
+                      alt: "appfamous - iOS App Design Blog",
+                    },
+                  ],
+                },
+                twitter: {
+                  card: "summary_large_image",
+                  title: "appfamous - Master iOS App Design",
+                  description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
+                  images: ["/og-image.png"],
+                  creator: "@appfamous",
+                },
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
