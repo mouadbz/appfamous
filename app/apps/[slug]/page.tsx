@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const ogImage = app.icon || `${siteConfig.url}/og-app-default.png`
 
   return {
-    title: `${app.title} | appfamous`,
+    title: `${app.title} | AppsGalleria.com`,
     description: app.description || `Learn about ${app.title} in this comprehensive iOS app showcase.`,
     keywords: app.tags || ["iOS app design", "mobile development", "UI/UX", app.category],
     authors: [{ name: siteConfig.creator }],
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       canonical: appUrl,
     },
     openGraph: {
-      title: app.title,
+      title: `${app.title} | AppsGalleria.com`,
       description: app.description || `Learn about ${app.title}`,
       url: appUrl,
       siteName: siteConfig.name,
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: app.title,
       description: app.description || `Learn about ${app.title}`,
       images: [ogImage],
-      creator: "@appfamous",
+      creator: "@AppsGalleria",
     },
     robots: {
       index: true,

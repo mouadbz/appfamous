@@ -6,33 +6,36 @@ import type { Metadata } from "next"
 import { siteConfig, getCanonicalUrl } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "iOS App Showcases - Design Case Studies | appfamous",
+  title: "iOS App Showcases - Design Case Studies | AppsGaleria.com",
   description:
     "Explore our collection of iOS app design showcases and case studies. Learn from real-world examples of beautiful, functional mobile applications.",
-  keywords: ["iOS app showcase", "app design case studies", "mobile app examples", "iOS UI design"],
-  alternates: {
-    canonical: getCanonicalUrl("/apps"),
-  },
+  keywords: ["iOS app design", "app showcases", "case studies", "mobile UI/UX", "iOS development"],
+  authors: [{ name: siteConfig.creator }],
+  canonical: getCanonicalUrl("/apps"),
   openGraph: {
-    title: "iOS App Showcases - Design Case Studies",
-    description: "Explore our collection of iOS app design showcases and case studies.",
+    title: "iOS App Showcases - Design Case Studies | AppsGaleria.com",
+    description:
+      "Explore our collection of iOS app design showcases and case studies. Learn from real-world examples of beautiful, functional mobile applications.",
     url: getCanonicalUrl("/apps"),
     siteName: siteConfig.name,
     images: [
       {
-        url: `${siteConfig.url}/og-apps.png`,
+        url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "iOS App Design Showcases",
+        alt: "AppsGaleria.com - iOS App Design Blog",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "iOS App Showcases - Design Case Studies",
-    description: "Explore our collection of iOS app design showcases and case studies.",
-    images: [`${siteConfig.url}/og-apps.png`],
+    title: "iOS App Showcases - Design Case Studies | AppsGaleria.com",
+    description:
+      "Explore our collection of iOS app design showcases and case studies. Learn from real-world examples of beautiful, functional mobile applications.",
+    images: ["/og-image.png"],
+    creator: "@AppsGaleria",
   },
   robots: {
     index: true,

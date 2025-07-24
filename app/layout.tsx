@@ -8,17 +8,17 @@ import { siteConfig } from "@/lib/config"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://appfamous.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://appsgalleria.com"),
   title: {
-    default: "appfamous - Master iOS App Design",
-    template: "%s | appfamous",
+    default: "AppsGalleria.com - Master iOS App Design",
+    template: "%s | AppsGalleria.com",
   },
   description:
     "Master iOS app design with comprehensive guides, tutorials, and design resources. Stay updated with the latest trends and best practices.",
   keywords: ["iOS app design", "mobile UI/UX", "iOS development", "app design tutorials", "iOS design patterns"],
-  authors: [{ name: "appfamous Team" }],
-  creator: "appfamous",
-  publisher: "appfamous",
+  authors: [{ name: "AppsGalleria Team" }],
+  creator: "AppsGalleria.com",
+  publisher: "AppsGalleria.com",
   formatDetection: {
     email: false,
     address: false,
@@ -41,35 +41,35 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-                  openGraph: {
-                  type: "website",
-                  locale: "en_US",
-                  url: siteConfig.url,
-                  siteName: siteConfig.name,
-                  title: "appfamous - Master iOS App Design",
-                  description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
-                  images: [
-                    {
-                      url: `${siteConfig.url}/og-image.png`,
-                      width: 1200,
-                      height: 630,
-                      alt: "appfamous - iOS App Design Blog",
-                    },
-                  ],
-                },
-                twitter: {
-                  card: "summary_large_image",
-                  title: "appfamous - Master iOS App Design",
-                  description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
-                  images: ["/og-image.png"],
-                  creator: "@appfamous",
-                },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: "AppsGalleria.com - Master iOS App Design",
+    description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
+    images: [
+      {
+        url: `${siteConfig.url}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "AppsGalleria.com - iOS App Design Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AppsGalleria.com - Master iOS App Design",
+    description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
+    images: ["/og-image.png"],
+    creator: "@AppsGalleria",
+  },
   verification: {
     google: "your-google-verification-code",
     yandex: "your-yandex-verification-code",
     yahoo: "your-yahoo-verification-code",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({

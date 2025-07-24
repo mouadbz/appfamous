@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: "appfamous",
+  name: "AppsGalleria.com",
   description: "Master iOS app design with comprehensive guides, tutorials, and design resources.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://appfamous.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://appsgalleria.com",
   ogImage: "/og-image.png",
   links: {
-    twitter: "https://twitter.com/appfamous",
-    github: "https://github.com/appfamous",
+    twitter: "https://twitter.com/AppsGalleria",
+    github: "https://github.com/AppsGalleria",
   },
-  creator: "appfamous Team",
+  creator: "AppsGalleria Team",
 }
 
 export const getCanonicalUrl = (path: string) => {

@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full py-4 px-4 mx-auto my-6 max-w-5xl">
       <div className="bg-black text-white py-3 px-4 md:px-6 rounded-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
         <Link href="/" className="text-xl md:text-2xl font-bold">
-          appfamous
+          AppsGalleria.com
         </Link>
         <div className="flex items-center gap-4 md:gap-6 text-sm md:text-lg">
           <Link href="/articles" className="hover:text-gray-300 transition-colors">

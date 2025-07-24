@@ -5,7 +5,7 @@ description: "A beautifully designed pomodoro timer that helps you stay focused 
 icon: "/images/apps/icon2014.png"
 tags: ["iOS", "Productivity", "SwiftUI", "Design", "Pomodoro"]
 appStoreUrl: "https://apps.apple.com/app/focus-timer"
-githubUrl: "https://github.com/appfamous/focus-timer"
+githubUrl: "https://github.com/AppsGalleria/focus-timer"
 websiteUrl: "https://focustimer.app"
 category: "Productivity"
 featured: true

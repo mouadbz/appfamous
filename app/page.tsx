@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 import { siteConfig, getCanonicalUrl } from "@/lib/config"
 
 export const metadata: Metadata = {
-  title: "appfamous - Master iOS App Design | Tutorials & Resources",
+  title: "AppsGaleria.com - Master iOS App Design | Tutorials & Resources",
   description:
     "Discover the latest iOS app design trends, techniques, and best practices. Comprehensive guides, tutorials, and resources for creating stunning iOS applications.",
   keywords: ["iOS app design", "mobile UI/UX", "iOS development", "app design tutorials", "iOS design patterns"],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     canonical: getCanonicalUrl("/"),
   },
   openGraph: {
-    title: "appfamous - Master iOS App Design",
+    title: "AppsGaleria.com - Master iOS App Design",
     description:
       "Discover the latest iOS app design trends, techniques, and best practices. Comprehensive guides and tutorials for creating stunning iOS applications.",
     url: siteConfig.url,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.url}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "appfamous - iOS App Design Blog",
+        alt: "AppsGaleria.com - iOS App Design Blog",
       },
     ],
     locale: "en_US",
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "appfamous - Master iOS App Design",
+    title: "AppsGaleria.com - Master iOS App Design",
     description: "Discover the latest iOS app design trends, techniques, and best practices.",
     images: [`${siteConfig.url}/og-image.png`],
-    creator: "@appfamous",
+    creator: "@AppsGaleria",
   },
   robots: {
     index: true,
