@@ -201,7 +201,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               </div>
               <p className="mb-4 text-lg">{article.appPromoText || linkedApp?.description || "Download our app for the best experience!"}</p>
               <a href={linkedApp?.appStoreUrl || article.appStoreUrl} target="_blank" rel="noopener noreferrer">
-                <button className="bg-black text-white px-6 py-3 rounded-full text-lg">Download on the App Store</button>
+                <button className="bg-black text-white px-4 md:px-6 py-3 rounded-full text-base md:text-lg w-full sm:w-auto">Download on the App Store</button>
               </a>
             </section>
           )}
@@ -210,4 +210,4 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
       </div>
     </>
   )
-}
+} 

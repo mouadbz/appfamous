@@ -9,8 +9,10 @@ import rehypeStringify from "rehype-stringify"
 export interface AppShowcase {
   slug: string
   title: string
+  name?: string
   date?: string
   description?: string
+  tagline?: string
   icon: string
   tags?: string[]
   appStoreUrl?: string
@@ -19,6 +21,10 @@ export interface AppShowcase {
   category: string
   featured?: boolean
   homepageOrder?: number
+  rating?: number
+  downloadCount?: string
+  price?: string
+  screenshots?: string[]
   content: string
   html: string
 }

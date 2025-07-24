@@ -184,10 +184,10 @@ export default function AppShowcasePage({ params }: { params: { slug: string } }
                   ))}
                 </div>
               )}
-              <div className="flex flex-wrap gap-3 mb-6">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-6">
                 {app.appStoreUrl && (
                   <Link href={app.appStoreUrl} target="_blank" rel="noopener noreferrer">
-                    <Button className="flex items-center gap-2">
+                    <Button className="flex items-center gap-2 w-full sm:w-auto justify-center">
                       <ExternalLink className="w-4 h-4" />
                       App Store
                     </Button>
@@ -195,7 +195,7 @@ export default function AppShowcasePage({ params }: { params: { slug: string } }
                 )}
                 {app.githubUrl && (
                   <Link href={app.githubUrl} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="flex items-center gap-2 bg-transparent">
+                    <Button variant="outline" className="flex items-center gap-2 bg-transparent w-full sm:w-auto justify-center">
                       <Github className="w-4 h-4" />
                       GitHub
                     </Button>
@@ -203,7 +203,7 @@ export default function AppShowcasePage({ params }: { params: { slug: string } }
                 )}
                 {app.websiteUrl && (
                   <Link href={app.websiteUrl} target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" className="flex items-center gap-2 bg-transparent">
+                    <Button variant="outline" className="flex items-center gap-2 bg-transparent w-full sm:w-auto justify-center">
                       <Globe className="w-4 h-4" />
                       Website
                     </Button>
